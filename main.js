@@ -140,7 +140,6 @@ function countdown() {
         if (count === 0) {
             count = 0;
             timerDiv.textContent = 0;
-            // soundCount.pause();
             clearInterval(timer);
             trueAnswer++;
             step++;
@@ -175,7 +174,6 @@ function init() {
     generateOperation();
     generateMainNumbers();
     notogriJavoblarRandom(resultNumber)
-    // countdown();
     console.log("To'g'ri javob", resultNumber);
 }
 
