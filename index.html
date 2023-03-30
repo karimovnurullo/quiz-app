@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="game">
+        <div class="top item">
+            <div class="top-left top-item background"></div>
+            <div class="top-center top-item background"></div>
+            <div class="top-right top-item background"></div>
+        </div>
+        <div class="countdown">
+            <span class="counter">0</span>
+            <span class="">/10</span>
+        </div>
+        <div class="center item">
+            <div class="center-item background"></div>
+            <div class="center-item background"></div>
+            <div class="center-item background"></div>
+            <div class="center-item background"></div>
+        </div>
+        <div class="bottom item">
+            <button class="generate-btn">Generate</button>
+        </div>
+        <div class="true alert">
+            To'g'ri topdingiz
+            <div class="answer"></div>
+            <div class="close">
+                <i class="uil uil-multiply"></i>
+            </div>
+        </div>
+        <div class="false alert">
+            Noto'g'ri
+            <div class="close">
+                <i class="uil uil-multiply"></i>
+            </div>
+        </div>
+        <div class="the-end alert">
+           <div class="the-end-text"> O'yin tugadi</div>
+            <div class="natija">
+                <div class="natija-text ">To'g'ri javob lar - </div>
+                <div class="true-answer"></div>
+            </div>
+            <div class="natija">
+                <div class="natija-text">Noto'g'ri javoblar - </div>
+                <div class="false-answer"></div>
+            </div>
+            <div class="close">
+                <i class="uil uil-multiply"></i>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
