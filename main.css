@@ -28,6 +28,10 @@ body {
     -webkit-backdrop-filter: blur(2px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    display: none;
+}
+.game.active{
+    display: flex;
 }
 .item {
     padding: 20px;
@@ -195,7 +199,7 @@ button:active {
 }
 .countdown{
     height: 40px;
-    background-color: #dfff;
+    background-color: #fff;
     width: fit-content;
     border-radius: 20px;
     margin: auto;
@@ -222,4 +226,41 @@ button:active {
 }
 .false-answer{
     color: red;
+}
+.log-in{
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-btn.active{
+    display: none;
+}
+.start-btn{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.timer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    /* background-color: red; */
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    /* border-radius: 10px; */
+    border-bottom-left-radius: 10px;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.generate-btn{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

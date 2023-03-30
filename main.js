@@ -13,6 +13,9 @@ const countdownDiv = document.querySelector(".counter");
 const falseAnswerDiv = document.querySelector(".false-answer");
 const trueAnswerDiv = document.querySelector(".true-answer");
 const theEnd = document.querySelector(".the-end");
+const startBtn = document.querySelector(".start-btn");
+const game = document.querySelector(".game");
+const timerDiv = document.querySelector(".timer");
 // const soundCount = new Audio("./count.mp3");
 const soundCount = new Audio("./s.m4a");
 soundCount.load();
@@ -84,17 +87,16 @@ function generateMainNumbers() {
             if (step === 10) {
                 trueDiv.classList.remove("active");
                 falseDiv.classList.remove("activexato");
-                    // alert("O'yin tugadi");
-                    step = 0;
-                    countdownDiv.textContent = step;
-                    trueAnswerDiv.textContent = trueAnswer;
-                    falseAnswerDiv.textContent = falseAnswer;
-                    trueAnswer = 0;
-                    falseAnswer = 0;
-                    theEnd.classList.add("active");
-                    init();
-                }
-            });
+                step = 0;
+                countdownDiv.textContent = step;
+                trueAnswerDiv.textContent = trueAnswer;
+                falseAnswerDiv.textContent = falseAnswer;
+                trueAnswer = 0;
+                falseAnswer = 0;
+                theEnd.classList.add("active");
+                init();
+            }
+        });
     }
 }
 let trueDivClose = document.querySelector('.true .close');
@@ -129,27 +131,46 @@ close.forEach(element => {
 });
 
 
-// let count = 15;
+let count = 15;
+timerDiv.textContent = count;
 
-// function countdown() {
-//     const timer = setInterval(() => {
-//         count--;
-//         if (count === 0) {
-//             countdownDiv.textContent = 0;
-//             soundCount.pause();
-//             clearInterval(timer);
-//             console.log('Time up!');
-//             count = 15;
-//             init();
-//         } else {
-//             console.log(count);
-//             countdownDiv.textContent = count;
-//         }
-//     }, 1000);
-// }
+function countdown() {
+    const timer = setInterval(() => {
+        count--;
+        if (count === 0) {
+            count = 0;
+            timerDiv.textContent = 0;
+            // soundCount.pause();
+            clearInterval(timer);
+            trueAnswer++;
+            step++;
+            countdownDiv.textContent = step;
+            console.log('Time up!');
+            count = 15;
+            init();
+           
+        } else {
+            timerDiv.textContent = count;
+        }
+        if (step === 10) {
+            trueDiv.classList.remove("active");
+            falseDiv.classList.remove("activexato");
+            step = 0;
+            countdownDiv.textContent = step;
+            trueAnswerDiv.textContent = trueAnswer;
+            falseAnswerDiv.textContent = falseAnswer;
+            trueAnswer = 0;
+            falseAnswer = 0;
+            theEnd.classList.add("active");
+            clearInterval(timer);
+            init();
+        }
+    }, 1000);
+}
 
 
 function init() {
+    countdown();
     randomMain();
     generateOperation();
     generateMainNumbers();
@@ -157,6 +178,10 @@ function init() {
     // countdown();
     console.log("To'g'ri javob", resultNumber);
 }
-init();
 
 generateBtn.addEventListener("click", init);
+startBtn.addEventListener("click", ()=>{
+    init();
+    game.classList.add('active');
+    startBtn.classList.add('active');
+});
